@@ -1,0 +1,10 @@
+<h1>Here's the form to create a new student:</h1>
+
+<%= form_for @student do |f| %>
+<%= f.text_field :name %>
+<%= f.number_field :age %>
+<%= f.collection_select :school_id, @schools, :id, :name  %>  <%#:id is the method that you want to call to set the attribute for the student. :name is the method you want to call on the elements for the list%>
+<%= f.submit :submit %>
+
+
+<% end %>

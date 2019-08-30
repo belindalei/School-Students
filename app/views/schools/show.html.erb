@@ -1,2 +1,22 @@
-<h1>School#show</h1>
-<p>Find me in app/views/school/show.html.erb</p>
+<h1><%= "Here are all the students that belong to #{@school.name}:" %> </h1>
+
+<ul>
+<% @school.students.each do |student| %>
+    <% if student.school.name == @school.name %>
+       <li><%= link_to student.name, new_student_url %> 
+       <%= link_to "Delete", student_path(student), :data => {:confirm => "You sure?", :method => "delete" } %></li>
+    <% end %>
+<% end %>
+</ul>
+
+<h4>Search for your student here:</h4>
+
+<%= form_tag(search_school_url, :method => "get") do %>
+    <%= text_field_tag :search, params[:search]%>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+
+
+
+

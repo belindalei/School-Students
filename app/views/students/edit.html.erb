@@ -1,0 +1,8 @@
+<h1><%= "Edit the information for #{@student.name} here "%></h1>
+
+<%=form_for @student do |f|%>
+<%=f.text_field :name%>
+<%=f.number_field :age%>
+<%= f.collection_select :school_id, @schools, :id, :name  %>
+<%=f.submit :submit%>
+<%end%>
