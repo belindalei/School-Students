@@ -13,24 +13,19 @@ Rails.application.routes.draw do
 
   get '/students', to: "students#index", as: "students"
 
-  get '/students/new', to: 
-  "students#new", as: "new_student"
+  get '/students/new', to: "students#new", as: "new_student"
 
   # get '/students/search', to: "students#search", as: "search_student"
 
-  get '/students/:id', to: 
-  "students#show", as: "student"
+  get '/students/:id', to: "students#show", as: "student"
 
-  get '/students/:id/edit', to: 
-  "students#edit", as: "edit_student"
+  get '/students/:id/edit', to: "students#edit", as: "edit_student"
 
-  post '/students', to: 
-  "students#create"
+  post '/students', to: "students#create"
 
   patch '/students/:id', to: "students#update"
 
-  delete '/students/:id', to: 
-  "students#destroy"
+  delete '/students/:id', to: "students#destroy"
 
 
 

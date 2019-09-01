@@ -3,7 +3,7 @@
 <ul>
   <%@schools.each do |school|%>
     <li>
-      Name: <%=link_to school.name, school_path(school.id)%>
+      Name: <%=link_to "#{school.name + " , " + school.address}", school_path(school.id)%>
       <br>
       Address: <%=link_to school.address, school_path(school.id)%>
     </li>
